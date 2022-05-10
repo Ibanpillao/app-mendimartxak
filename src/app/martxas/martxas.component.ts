@@ -34,7 +34,7 @@ export class MartxasComponent implements OnInit {
           this.listaMartxas.push(new MendiMartxa(valor.nombre,valor.ciudad, valor.distancia, fechaJS, valor.participantes));
         });
           
-        console.log("Read: " + this.listaMartxas);
+        console.log(this.listaMartxas);
       },
       error : error => {
         console.log(error);

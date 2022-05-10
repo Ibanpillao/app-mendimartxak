@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultasService } from '../services/consultas.service';
+import { UsuariosService } from '../services/usuarios.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Usuario } from '../models/Usuario';
@@ -8,7 +9,7 @@ import { Usuario } from '../models/Usuario';
   selector: 'app-panel-control',
   templateUrl: './panel-control.component.html',
   styleUrls: ['./panel-control.component.css'],
-  providers: [ConsultasService]
+  providers: [ConsultasService,UsuariosService]
 })
 export class PanelControlComponent implements OnInit {
 
@@ -18,7 +19,7 @@ export class PanelControlComponent implements OnInit {
   public localStorage : any = localStorage;
 
 
-  constructor(private _consultaServicio : ConsultasService, private _router : Router) {
+  constructor(private _userService : UsuariosService, private _consultaServicio : ConsultasService, private _router : Router) {
     this.user = new Usuario('','');
    }
 
@@ -51,7 +52,7 @@ export class PanelControlComponent implements OnInit {
 
   loginUser(user : any) : void {
 
-    this._consultaServicio.LoginUser(user).subscribe({
+    this._userService.LoginUser(user).subscribe({
       next : data => {
         console.log(JSON.stringify(data.message));
         if (data.success == true) {
@@ -59,12 +60,14 @@ export class PanelControlComponent implements OnInit {
           this.localStorage.setItem('login',JSON.stringify(user));
           console.log(this.localStorage.getItem('login'));
 
-        } else Swal.fire({
-          position: 'center',
-          icon: 'error',
-          title: 'Login incorrecto!',
-          showConfirmButton: true,
-        })
+        } else {
+            Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: data.message,
+            showConfirmButton: true,
+          })
+        }
       },
       error : error => {
         console.log(error);

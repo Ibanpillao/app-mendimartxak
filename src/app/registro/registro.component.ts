@@ -1,3 +1,4 @@
+import { UsuariosService } from './../services/usuarios.service';
 import { Component, OnInit } from '@angular/core';
 import { ConsultasService } from '../services/consultas.service';
 import { Router } from '@angular/router';
@@ -17,7 +18,7 @@ export class RegistroComponent implements OnInit {
   public user : Usuario;
 
 
-  constructor(private _consultaServicio : ConsultasService, private _router : Router) { 
+  constructor(private _userServicio : UsuariosService, private _router : Router) { 
     this.user = new Usuario('','');
   }
 
@@ -50,7 +51,7 @@ export class RegistroComponent implements OnInit {
 
   private registroUser(user : any) : void {
 
-    this._consultaServicio.RegistroUser(user).subscribe({
+    this._userServicio.RegistroUser(user).subscribe({
       next : data => {
         console.log(JSON.stringify(data.message));
         if (data.success == true) {
@@ -66,7 +67,7 @@ export class RegistroComponent implements OnInit {
         } else Swal.fire({
           position: 'center',
           icon: 'error',
-          title: 'El usuario ya está registrado!',
+          title: data.message,
           showConfirmButton: true,
         })
       },
@@ -75,7 +76,7 @@ export class RegistroComponent implements OnInit {
         Swal.fire({
           position: 'center',
           icon: 'error',
-          title: 'Hubo algún error, inténtelo otra vez!',
+          title: error.message,
           showConfirmButton: true,
           timer: 1500
         })

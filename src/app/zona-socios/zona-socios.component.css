@@ -1,0 +1,11 @@
+
+table {
+    padding-bottom: 3em !important;
+    width: 100% !important;
+}
+
+#addMartxa {
+    background: url('src/img/add.svg') no-repeat center/cover;
+    height: 50px;
+    width: 50px;
+}

@@ -1,0 +1,10 @@
+/* CSS martxas.component */
+
+* {
+    position: relative;
+    z-index: 10;
+}
+
+li {
+    padding: .5em;
+}

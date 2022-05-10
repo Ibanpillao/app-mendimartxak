@@ -1,0 +1,19 @@
+
+<h1>Nuevo usuari@</h1>
+
+<div class="w-75 d-flex justify-content-center align-items-center m-auto container">
+    <div *ngIf="this.localStorage.getItem('login') == null">
+        <h5 class="h5">Por favor, introduce un nombre y una contraseña</h5>
+        <form #formLogin = "ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="nombre"></label>
+                <input required class="m-1 form-text form-control-lg" type="text" name="nombre" placeholder="Nombre" id="" [(ngModel)] = "this.nombre">
+            </div>
+            <div class="form-group">  
+                <label for="password"></label>
+                <input required class="m-1 form-text form-control-lg" type="password" name="password" placeholder="Contraseña" id="" [(ngModel)] = "this.password">
+            </div>
+            <input class="m-1 btn btn-dark" type="submit" value="Registrar">
+            <p>¿Estás registrado? <a [routerLink]="['/panel-de-control']"><small>Logéate!</small></a></p>
+        </form>
+    </div>

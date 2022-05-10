@@ -1,0 +1,30 @@
+<h1>Añadir martxa</h1>
+
+<form class="m-auto w-75" #formLogin = "ngForm" (ngSubmit)="onSubmit()">
+    <div class="m-3 form-group">
+        <label for="nombre">Nombre</label>
+        <input class="m-1 form-text form-control" name="nombre" type="text" [(ngModel)]="this.nombre">
+    </div>
+    <div class="m-3 form-group">  
+        <label for="ciudad">Ciudad</label>
+        <input class="m-1 form-text form-control" name="ciudad" type="text" [(ngModel)]="this.ciudad">
+    </div>
+    <div class="m-3 form-group">  
+        <label for="distancia">Distancia</label>
+        <input min=0 class="m-1 form-text form-control" name="distancia" type="number" [(ngModel)]="this.distancia">
+    </div>
+    <div class="m-3 form-group">  
+        <label for="fecha">Fecha</label>
+        <input class="m-1 form-text form-control" name="fecha" type="date" [(ngModel)]="this.fecha">
+    </div>
+    <div class="m-3 form-group">  
+        <label for="participantes">Participantes</label>
+        <input min=0 class="m-1 form-text form-control" name="participantes" type="number" [(ngModel)]="this.participantes">
+    </div>
+    <input class="m-1 btn btn-dark" type="submit" value="Añadir">
+    <input [routerLink]="['/panel-de-control']" class="m-1 btn btn-dark" type="button" value="Volver">
+
+</form>
+
+
+

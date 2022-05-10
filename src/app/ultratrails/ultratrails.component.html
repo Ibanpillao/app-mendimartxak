@@ -1,0 +1,12 @@
+<h1>Ultra trails. Larga distancia</h1>
+
+<div class="container" id="lista-martxas">
+
+    <div *ngFor="let martxa of this.listaUltraTrail; index as i" class="caja-50 row">
+        <div class="h-100 d-flex align-items-center justify-content-center w-50 col">
+            <span class="rounded position-absolute d-flex align-items-center justify-content-center">{{martxa[1]}}</span>
+            <p class="h4">{{martxa[0]}}</p>
+            <span class="rounded position-absolute d-flex align-items-center justify-content-center">{{martxa[2]}} KM</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+
+span {
+    border: 1px solid;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: .3em;
+    opacity: .9;
+}

@@ -1,0 +1,29 @@
+
+<button title="Añadir martxa" type="button" class="m-3 btn" id="addMartxa" [routerLink]="['/add-mendi-martxa']"></button>
+
+<table class="w-75 m-auto table-primary table-light table-hover table table-responsive-md" id="lista-martxas">
+    <thead class="table-dark">
+        <tr class="text-center">
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>CIUDAD</th>
+            <th>FECHA</th>
+            <th>KM</th>
+            <th>PARTICIPANTES</th>
+            <th colspan="2">OPERACIONES</th>
+
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr *ngFor="let m of this.martxa; index as i">
+            <td>{{this.idMartxa[i]}}</td>
+            <td>{{m.getNombre()}}</td>
+            <td>{{m.getCiudad()}}</td>
+            <td>{{m.getFecha()}}</td>
+            <td>{{m.getDistancia()}}</td>
+            <td>{{m.getParticipantes()}}</td>
+            <td><button id="btnBorrar" value="{{this.idMartxa[i]}}" class="btn btn-danger" (click)="borrarMartxa($event)">Borrar</button></td>
+            <td><button id="btnActualizar" value ="{{this.idMartxa[i]}}" class="btn btn-secondary" (click)="actualizarMartxa($event)">Actualizar</button></td>
+        </tr>
+    </tbody>    
+</table>

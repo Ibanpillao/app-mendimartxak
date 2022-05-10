@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+/* CSS */
+
+h1 {
+    margin: 1em;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+body {
+    background: url('src/img/portada.jpg') no-repeat center; /* https://pixabay.com/es/photos/rastro-corriendo-bosque-ejercicio-6497875/ */
+    background-attachment: fixed;
+    color: white;
+    overflow-y: scroll;
+    padding-bottom: 300px;
+}
+
+.caja-black {
+    background-color: rgba(0,0,0,.6);
+    bottom: 0;
+    height: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#nav-principal{
+    background-color: brown !important;
+}
+
+table {
+    opacity: .8;
+}
+
+thead {
+    height: 50px !important;
+}
+
+table td {
+    padding: 1em !important;
+}
+
+
+ul {
+    margin: auto;
+}
+
+li {
+    margin: auto .4em;
+}
+

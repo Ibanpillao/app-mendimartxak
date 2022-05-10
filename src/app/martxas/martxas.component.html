@@ -1,0 +1,25 @@
+
+<!-- HTML martxas -->
+
+<h1>Mendi martxas en Euskal Herria</h1>
+
+<table class="w-75 m-auto table-primary table-light table-hover table table-responsive-md" id="lista-martxas">
+    <thead class="table-dark">
+        <tr class="text-center">
+            <th>NOMBRE</th>
+            <th>CIUDAD</th>
+            <th>KM</th>
+            <th>FECHA</th>
+            <th>PARTICIPANTES</th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr *ngFor="let martxa of this.listaMartxas">
+            <td>{{martxa.getNombre()}}</td>
+            <td>{{martxa.getCiudad()}}</td>
+            <td>{{martxa.getDistancia()}}</td>
+            <td>{{martxa.getFecha()}}</td>
+            <td>{{martxa.getParticipantes()}}</td>
+        </tr>
+    </tbody>    
+</table>

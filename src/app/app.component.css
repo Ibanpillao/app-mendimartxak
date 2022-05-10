@@ -6,3 +6,16 @@ span {
     padding: .3em;
     opacity: .9;
 }
+
+#logo {
+    margin-right: 2em;
+    opacity: .8;
+    vertical-align: middle;
+}
+
+#logo > img {
+    border: 1px solid;
+    border-radius: 35px;
+    height: 35px;
+    width: 35px;
+}

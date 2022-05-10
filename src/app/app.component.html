@@ -4,6 +4,7 @@
       <span *ngIf="this.localStorage.getItem('login') != null" ><a (click)="this.localStorage.removeItem('login'); goToPanel()">Cerrar sesión</a></span>
 
       <ul class="navbar-nav me-auto">
+        <li id="logo"><img src="assets/monte.svg" alt="Logo"></li>
         <li class="nav-item"><a class="nav-link" [routerLink]="['/']">Home</a></li>
         <li class="nav-item"><a class="nav-link" [routerLink]="['/listado-mendi-martxas']">Mendimartxas</a></li>
         <li class="nav-item"><a class="nav-link" [routerLink]="['/calendario']">Calendario</a></li>

@@ -74,7 +74,7 @@ export class UpdateComponent implements OnInit {
           Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Martxa añadida!',
+            title: 'Martxa actualizada!',
             showConfirmButton: true,
             timer: 1500
           })

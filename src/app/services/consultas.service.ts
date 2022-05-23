@@ -21,7 +21,7 @@ export class ConsultasService {
   ReadOne(idMartxa : number) : Observable<any> {
     return this._htpp.get('https://mendimartxas.herokuapp.com/mendimartxas/' + idMartxa);
   }
-
+  
   Update(idMartxa : number, datos : any) : Observable<any> {
     return this._htpp.put('https://mendimartxas.herokuapp.com/update/' + idMartxa, datos);
   }

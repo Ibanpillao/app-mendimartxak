@@ -17,4 +17,3 @@ export class UsuariosService {
     return this._htpp.post('https://mendimartxas.herokuapp.com/registro-usuario/',usuario);
   }
 }
-

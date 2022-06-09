@@ -19,7 +19,7 @@ export class UpdateComponent implements OnInit {
   public fecha : any;
   public participantes : any;
 
-  constructor(private _consulta : ConsultasService, private _route : ActivatedRoute) {
+  constructor(private _router : Router, private _consulta : ConsultasService, private _route : ActivatedRoute) {
     console.log(_route.snapshot.paramMap.get('id'));
     this.id = this._route.snapshot.paramMap.get('id');
     this.martxa = new MendiMartxa('','',0,'',0);
@@ -76,7 +76,10 @@ export class UpdateComponent implements OnInit {
             icon: 'success',
             title: 'Martxa actualizada!',
             showConfirmButton: true,
-            timer: 1500
+          }).then( (result)=>{
+            if (result.isConfirmed) {
+              this._router.navigate(['/panel-de-control'])
+            }
           })
       }
     }

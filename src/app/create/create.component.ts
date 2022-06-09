@@ -50,7 +50,10 @@ export class CreateComponent implements OnInit {
           icon: 'success',
           title: 'Martxa añadida!',
           showConfirmButton: true,
-          timer: 1500
+        }).then( (result)=>{
+          if (result.isConfirmed) {
+            this._ruta.navigate(['/panel-de-control'])
+          }
         })
     }
   }

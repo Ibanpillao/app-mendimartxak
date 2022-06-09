@@ -8,10 +8,17 @@ import { Observable } from 'rxjs';
 
 export class ConsultasService {
 
+  public token : any = localStorage.getItem('token');
+
+  public headers = new HttpHeaders({
+    'Content-Type':'application/json',
+    'Authorization':`Bearer ${this.token}`
+  })
+
   constructor(public _htpp : HttpClient) {}
 
   Create(martxa : any) : Observable<any> {
-    return this._htpp.post('https://mendimartxas.herokuapp.com/addMendiMartxa/',martxa);
+    return this._htpp.post('https://mendimartxas.herokuapp.com/addMendiMartxa/',martxa,{headers:this.headers});
   }
 
   Read() : Observable<any> {
@@ -23,11 +30,12 @@ export class ConsultasService {
   }
   
   Update(idMartxa : number, datos : any) : Observable<any> {
-    return this._htpp.put('https://mendimartxas.herokuapp.com/update/' + idMartxa, datos);
+    return this._htpp.put('https://mendimartxas.herokuapp.com/update/' + idMartxa, datos,{headers:this.headers});
   }
 
   Delete(idMartxa : number) : Observable<any> {
-    return this._htpp.delete('https://mendimartxas.herokuapp.com/borrar/' + idMartxa);
+
+    return this._htpp.delete('https://mendimartxas.herokuapp.com/borrar/' + idMartxa, {headers:this.headers});
   }
 
 }

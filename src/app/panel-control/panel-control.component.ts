@@ -58,6 +58,7 @@ export class PanelControlComponent implements OnInit {
         if (data.success == true) {
           this._router.navigate(['panel-de-control']);
           this.localStorage.setItem('login',JSON.stringify(user));
+          this.localStorage.setItem('token',JSON.stringify(data.token));
           console.log(this.localStorage.getItem('login'));
 
         } else {

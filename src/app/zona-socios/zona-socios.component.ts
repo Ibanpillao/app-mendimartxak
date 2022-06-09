@@ -56,13 +56,12 @@ private parsearFecha(fecha : any) : string{
           width: 400,
           icon: 'success',
           title: `Martxa ${id} eliminada`,
-          showConfirmButton: false,
-          timer: 2000
-        });
-       setTimeout( 
-          ()=>{ window.location.reload() },
-          2200
-          );
+          showConfirmButton: true,
+        }).then( (result)=>{
+          if (result.isConfirmed) {
+            this._router.navigate(['/listado-mendi-martxas'])
+          }
+        })
       },
       error : error => {
         console.log(error);

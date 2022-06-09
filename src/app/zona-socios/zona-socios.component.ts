@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 
 export class ZonaSociosComponent implements OnInit {
-
+  
   public martxa : Array<MendiMartxa> = [];
   public idMartxa : Array<Number> = [];
 

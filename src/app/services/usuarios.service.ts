@@ -10,7 +10,7 @@ export class UsuariosService {
   constructor(public _htpp : HttpClient) {}
 
   LoginUser(usuario : any) : Observable<any> {
-    return this._htpp.post('http://localhost:3309/login-usuario/',usuario);
+    return this._htpp.post('https://mendimartxas.herokuapp.com/login-usuario/',usuario);
   }
   
   RegistroUser(usuario : any) : Observable<any> {

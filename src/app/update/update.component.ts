@@ -92,7 +92,7 @@ export class UpdateComponent implements OnInit {
       fecha : martxa.getFecha(),
       participantes : martxa.getParticipantes()
     }
-
+    
         this._consulta.Update(this.id,martxaAct).subscribe({
       next : data => {
         console.log(data.message);
